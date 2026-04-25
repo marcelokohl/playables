@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marcelo Kohl - Playables Portfolio</title>
+<style>
+    body {
+        margin: 0;
+        padding: 40px;
+        display: flex;
+        justify-content: center;
+        font-family: sans-serif;
+    }
+
+    section {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+        width: 100%;
+        max-width: 1000px;
+    }
+
+    a {
+        border: 1px solid #111;
+        padding: 20px;
+        text-align: center;
+        text-decoration: none;
+        color: #111;
+        font-weight: bold;
+        aspect-ratio: 1/1;
+        /* Quadrado no Desktop */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Responsividade para Mobile */
+    @media (max-width: 600px) {
+        section {
+            grid-template-columns: 1fr;
+            /* Coluna única */
+        }
+
+        a {
+            aspect-ratio: auto;
+            /* Desativa o quadrado */
+            height: 100px;
+            /* Altura fixa por linha */
+        }
+    }
+</style>
+<section>
+    
+                <a href="pixel-cube.html">
+                    PIXEL-CUBE
+                </a>
+            
+</section>
