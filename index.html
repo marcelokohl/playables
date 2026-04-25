@@ -1,79 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marcelo Kohl - Playables Portfolio</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 40px;
-            display: flex;
-            justify-content: center;
-            font-family: sans-serif;
-            background: #fff;
-        }
-
-        section {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 30px;
-            width: 100%;
-            max-width: 1100px;
-        }
-
-        a {
-            border: 1px solid #111;
-            text-decoration: none;
-            color: #111;
-            aspect-ratio: 1/1;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-        }
-
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            pointer-events: none;
-        }
-
-        .info {
-            position: relative;
-            z-index: 2;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 10px;
-            border-top: 1px solid #111;
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-        }
-
-        strong { font-size: 14px; text-transform: uppercase; }
-        span { font-size: 12px; color: #666; margin-bottom: 5px; }
-        small { font-size: 11px; color: #555; }
-
-        @media (max-width: 600px) {
-            section { grid-template-columns: 1fr; }
-            a { aspect-ratio: auto; height: 120px; }
-        }
-    </style>
+    <title>Marcelo Kohl - Playables</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
+
 <body>
-    <section>
+
+    <section id="project-list">
         
-                <a href="pixel-cube.html">
+                <div class="project-card" onclick="openProject('pixel-cube.html', 'Pixel Cube 3D', 'A high-performance interactive 3D cube featuring smooth touch rotation, physical inertia, and crisp pixel art textures. Optimized for mobile ad networks.', 'TOTAL SIZE: 0.8mb')">
                     <iframe src="pixel-cube.html"></iframe>
                     <div class="info">
                         <strong>Pixel Cube 3D</strong>
                         <span>A high-performance interactive 3D cube featuring smooth touch rotation, physical inertia, and crisp pixel art textures. Optimized for mobile ad networks.</span>
-                        <small>782.04 KB</small>
+                        <small>TOTAL SIZE: 0.8mb</small>
                     </div>
-                </a>
-            
+                </div>
     </section>
+
+    <div id="simulator">
+        <div id="simulator-header">
+            <div class="simulator-controls">
+                <button id="simulator-back">BACK</button>
+
+                <select id="simulator-device-selector">
+                    <option value="390x844">iPhone 13 (390x844)</option>
+                    <option value="360x800">Galaxy S21 (360x800)</option>
+                    <option value="820x1180">iPad Air (820x1180)</option>
+                    <option value="fill">Fill Screen</option>
+                </select>
+                <button id="simulator-open-external">Open New Tab</button>
+            </div>
+        </div>
+
+        <div id="simulator-body">
+            <div id="simulator-info">
+                <strong id="simulator-info-title">PROJECT NAME</strong>
+                <span id="simulator-info-desc">Description goes here...</span>
+                <small id="simulator-info-size">TOTAL SIZE: 0.0mb</small>
+            </div>
+
+            <div id="simulator-frame">
+                <iframe id="simulator-iframe" src=""></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="/script.js"></script>
 </body>
+
 </html>

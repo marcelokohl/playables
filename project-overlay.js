@@ -34,7 +34,8 @@ class ProjectOverlay extends HTMLElement {
                 <div id="project-overlay-body">
                     <strong>${title}</strong>
                     <span>${description}</span>
-                    <small>${size} KB</small>
+                    <small>${size}</small>
+
                 </div>
             </div>
         `;
