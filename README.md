@@ -24,7 +24,3 @@ Each project follows a hybrid development process:
 ## Live Demo
 Check out the live projects and technical tests here: [marcelokohl.github.io/playables/](https://marcelokohl.github.io/playables/)
 
-## Current Projects
-*   **Playables Dashboard**: A centralized interface (`index.html`) for navigating the internal test projects.
-*   **Pixel Cube**: A 3D test case demonstrating particle efficiency and real-time physics in an optimized single-file environment.
-
