@@ -15,13 +15,21 @@ class ProjectOverlay extends HTMLElement {
         const description = this.getAttribute('description') || '';
         const size = this.getAttribute('size') || '0';
 
+        // Detecta se estamos em modo Dev ou se o título indica Dev
+        const isDev = window.location.hostname === 'localhost' || title.includes('[DEV]');
+        const cssPath = isDev ? '/project-overlay.css' : 'project-overlay.css';
+        const backLink = isDev ? '/index.html' : 'index.html';
+
         this.shadowRoot.innerHTML = `
-            <link rel="stylesheet" href="project-overlay.css">
+            <link rel="stylesheet" href="${cssPath}">
+
+
             <div id="project-overlay">
                 <div class="overlay-controls">
-                    <a href="index.html">← BACK</a>
+                    <a href="${backLink}">← BACK</a>
                     <button id="toggle-btn">—</button>
                 </div>
+
                 
                 <div id="project-overlay-body">
                     <strong>${title}</strong>
