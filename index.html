@@ -5,21 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marcelo Kohl - Playables</title>
-    <link rel="stylesheet" href="/style.css">
+  <script type="module" crossorigin>(function(){const o=document.createElement("link").relList;if(o&&o.supports&&o.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))i(e);new MutationObserver(e=>{for(const t of e)if(t.type==="childList")for(const l of t.addedNodes)l.tagName==="LINK"&&l.rel==="modulepreload"&&i(l)}).observe(document,{childList:!0,subtree:!0});function s(e){const t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?t.credentials="include":e.crossOrigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function i(e){if(e.ep)return;e.ep=!0;const t=s(e);fetch(e.href,t)}})();const u=document.getElementById("simulator"),f=document.getElementById("simulator-iframe"),n=document.getElementById("simulator-frame"),c=document.getElementById("simulator-device-selector"),m=document.getElementById("simulator-open-external"),d=document.getElementById("simulator-back"),g=document.getElementById("simulator-info-title"),w=document.getElementById("simulator-info-desc"),b=document.getElementById("simulator-info-size");let y="";const E={"390x844":{w:390,h:844},"360x800":{w:360,h:800},"820x1180":{w:820,h:1180},fill:{w:"100%",h:"100%"}};function a(r){const o=E[r],s=document.getElementById("simulator-body"),i=40;if(o)if(o.w==="100%")n.style.width="100%",n.style.height="100%",n.style.borderRadius="0",n.style.border="none",n.style.transform="scale(1)";else{const e=o.w+24,t=o.h+24,l=s.clientWidth-i,p=s.clientHeight-i,h=Math.min(l/e,p/t,1);n.style.width=o.w+"px",n.style.height=o.h+"px",n.style.borderRadius="36px",n.style.border="12px solid var(--phone-border)",n.style.transform=`scale(${h})`,n.style.transformOrigin="center center"}}window.openProject=function(r,o,s,i){y=r,f.src=r,g.innerText=o,w.innerText=s,b.innerText=i,u.style.display="flex",document.body.style.overflow="hidden",setTimeout(()=>{window.innerWidth<=600?a("fill"):a(c.value)},10)};window.addEventListener("resize",()=>{u.style.display==="flex"&&a(c.value)});c&&(c.onchange=()=>a(c.value));m&&(m.onclick=()=>window.open(y,"_blank"));d&&(d.onclick=()=>{u.style.display="none",f.src="",document.body.style.overflow="auto"});window.addEventListener("keydown",r=>{r.key==="Escape"&&d&&d.click()});</script>
+  <style rel="stylesheet" crossorigin>:root{--bg-main: #111;--text-main: #fff;--bg-card-info: #333;--text-card-dark: #fff;--bg-simulator-info: #444;--sim-border: #333;--phone-border: #222}body{margin:0;padding:40px;display:flex;justify-content:center;font-family:sans-serif;background:var(--bg-main);color:var(--text-main)}#project-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:30px;width:100%;max-width:1200px}#project-list .project-card{text-decoration:none;color:var(--text-card-dark);position:relative;overflow:hidden;display:flex;flex-direction:column;cursor:pointer}#project-list .project-card-iframe{width:100%;aspect-ratio:1/1;border:none;pointer-events:none;background:var(--bg-main)}#project-list .project-card-info{padding:15px;display:flex;flex-direction:column;gap:5px;background:var(--bg-card-info)}#project-list .project-card-title{font-size:14px;text-transform:uppercase}#project-list .project-card-description{font-size:12px;line-height:1.4}#project-list .project-card-size{font-size:11px;font-weight:700;margin-top:5px;text-align:right}#simulator{position:fixed;top:0;left:0;width:100%;height:100%;background:var(--bg-main);z-index:1000;display:none;flex-direction:column;align-items:center}#simulator-header{width:100%;padding:15px 20px;display:flex;justify-content:space-between;align-items:center;box-sizing:border-box;background:var(--bg-main);border-bottom:1px solid var(--sim-border);position:relative;z-index:10}.simulator-controls{display:flex;gap:15px;align-items:center}#simulator-header select,#simulator-header button{background:var(--bg-main);color:var(--text-main);border:1px solid #444;padding:6px 12px;font-size:12px;outline:none;cursor:pointer;text-transform:uppercase;font-weight:700}#simulator-header button:hover{background:#222;border-color:#666}#simulator-info{position:absolute;top:10px;left:10px;width:250px;background:var(--bg-simulator-info);padding:15px;color:var(--text-main);display:flex;flex-direction:column;gap:5px;z-index:5;pointer-events:none;border:1px solid transparent}#simulator-body{flex:1;width:100%;display:flex;justify-content:center;align-items:center;overflow:hidden;padding:0;box-sizing:border-box;position:relative}#simulator-frame{background:#000;border:12px solid var(--phone-border);border-radius:36px;box-shadow:0 0 50px #00000080;position:relative;overflow:hidden}#simulator-frame iframe{width:100%;height:100%;border:none;background:#fff}@media (max-width: 800px){#simulator-info{display:none}}@media (max-width: 600px){#project-list{grid-template-columns:1fr}#simulator-frame{border:none;border-radius:0;width:100%!important;height:100%!important}#simulator-header select{display:none}}</style>
 </head>
 
 <body>
 
     <section id="project-list">
         
-                <div class="project-card" onclick="openProject('pixel-cube.html', 'Pixel Cube 3D', 'A high-performance interactive 3D cube featuring smooth touch rotation, physical inertia, and crisp pixel art textures. Optimized for mobile ad networks.', 'TOTAL SIZE: 0.8mb')">
-                    <iframe src="pixel-cube.html"></iframe>
-                    <div class="info">
-                        <strong>Pixel Cube 3D</strong>
-                        <span>A high-performance interactive 3D cube featuring smooth touch rotation, physical inertia, and crisp pixel art textures. Optimized for mobile ad networks.</span>
-                        <small>TOTAL SIZE: 0.8mb</small>
-                    </div>
-                </div>
+                                    <div class="project-card" onclick="openProject('pixel-cube.html', 'Pixel Cube 3D', 'A high-performance interactive 3D cube featuring smooth touch rotation, physical inertia, and crisp pixel art textures. Optimized for mobile ad networks.', 'TOTAL SIZE: 0.8mb')">
+                                        <iframe class="project-card-iframe" src="pixel-cube.html"></iframe>
+                                        <div class="project-card-info">
+                                            <strong class="project-card-title">Pixel Cube 3D </strong>
+                                            <span class="project-card-description">A high-performance interactive 3D cube featuring smooth touch rotation, physical inertia, and crisp pixel art textures. Optimized for mobile ad networks.</span>
+                                            <small class="project-card-size">TOTAL SIZE: 0.8mb</small>
+                                        </div>
+                                    </div>
+                                
     </section>
 
     <div id="simulator">
@@ -50,7 +52,6 @@
         </div>
     </div>
 
-    <script type="module" src="/script.js"></script>
 </body>
 
 </html>
